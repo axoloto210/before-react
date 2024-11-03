@@ -9,7 +9,7 @@ const CORS_HEADERS = {
     'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-let likeCount = 1
+let likedCount = 1
 
 const server = http.createServer((req, res) => {
 
@@ -28,12 +28,12 @@ const server = http.createServer((req, res) => {
     // いいねボタンの処理
     if(req.method === 'GET' && req.url.startsWith('/api/like')){
         res.writeHead(200)
-        res.end(JSON.stringify({likeCount}))
+        res.end(JSON.stringify({likedCount}))
     }else if(req.method === 'POST', req.url.startsWith('/api/like')){
-        likeCount++
+        likedCount++
 
         res.writeHead(200)
-        res.end(JSON.stringify({likeCount}))
+        res.end(JSON.stringify({likedCount}))
             
     }else{
         res.writeHead(404)
