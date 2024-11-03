@@ -20,4 +20,4 @@ async function clickLikeButtonHandler() {
   likeButton.textContent = `👍+${likedCount}`;
 }
 
-document.addEventListener("click", clickLikeButtonHandler);
+likeButton.addEventListener("click", clickLikeButtonHandler);
