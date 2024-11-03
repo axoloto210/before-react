@@ -9,7 +9,7 @@ const CORS_HEADERS = {
     'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-let likedCount = 1
+let likedCount = 0
 
 const server = http.createServer((req, res) => {
 

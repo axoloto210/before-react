@@ -5,10 +5,11 @@ const likeButton = document.getElementById("like-button");
  */
 async function clickLikeButtonHandler() {
   let likedCount = parseInt(likeButton.getAttribute("data-liked-count"), 10);
-  const isPending = likeButton.getAttribute('data-pending') === "true"
+  // 処理中かで条件分岐をする場合には変数が必要に。
+  const isPending = likeButton.getAttribute("data-pending") === "true";
 
-  likeButton.setAttribute("data-pending", "true")
-  likeButton.setAttribute("disabled", "disabled")
+  likeButton.setAttribute("data-pending", "true");
+  likeButton.setAttribute("disabled", "disabled");
 
   await fetch("http://localhost:4000/api/like", {
     method: "POST",
@@ -20,15 +21,24 @@ async function clickLikeButtonHandler() {
       likedCount = data.likedCount;
       likeButton.setAttribute("data-liked-count", likedCount);
       likeButton.textContent = `👍+${likedCount}`;
-      likeButton.removeAttribute("disabled")
+      likeButton.removeAttribute("disabled");
     })
     .catch(() => {
       likeButton.setAttribute("data-failed", true);
       likeButton.textContent = "failed";
     })
-    .finally(()=>{
-      likeButton.setAttribute("data-pending","false")
+    .finally(() => {
+      likeButton.setAttribute("data-pending", "false");
     });
 }
 
 likeButton.addEventListener("click", clickLikeButtonHandler);
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await fetch("http://localhost:4000/api/like")
+    .then((res) => res.json())
+    .then((data) => {
+      likeButton.setAttribute("data-liked-count", data.likedCount);
+      likeButton.textContent = `👍+${data.likedCount}`;
+    });
+});
