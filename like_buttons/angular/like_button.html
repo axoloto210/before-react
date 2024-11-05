@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="likeApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="like_button.js" defer></script>
+    <title>AngularJS Like Button</title>
+  </head>
+  <body ng-controller="LikeController">
+    <h1>いいねボタン</h1>
+    <!--  型安全でない-->
+    <button
+      ng-disabled="isPending || isFailed"
+      ng-click="clickLikeButton()"
+      ng-bind="buttonText"
+    ></button>
+  </body>
+</html>
