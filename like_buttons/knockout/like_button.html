@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script src="like_button.js" defer></script>
+    <title>KnockoutJS Button</title>
+  </head>
+  <body>
+    <h1>いいねボタン</h1>
+    <button data-bind="click: incrementLike, 
+                       disable: isDisabled,
+                       text: buttonText">
+      👍+?
+    </button>
+  </body>
+</html>

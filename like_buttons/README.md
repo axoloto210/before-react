@@ -58,3 +58,17 @@ Controller: Model とView の橋渡し。命令的。
   - Model, View, Controller の分離ルールが強制されていないため、破綻しうる。
 - 密結合による変更困難性
   - Model, View, Controller はしばしば密結合になってしまい、変更が難しくなる。
+
+## Knockout.js
+MVVC アーキテクチャを採用している（Angular.js やVue.jsもMVVM を採用している）。
+
+View-Model: ModelとViewの橋渡し。Controllerとは異なり、Modelにのみ依存する（Viewについては関知しない）。
+
+Viewでのデータの変更は自動的にView-Modelに反映される（逆も然り）。
+
+（React はこのMVVM に単方向データフローという改良を加えているのである。）
+
+欠点として以下を抱えている。
+- ボイラープレートが多い
+- ViewModel は巨大化・複雑化しやすく、リファクタリングやパフォーマンス最適化が困難となりうる
+  - 巨大なViewModel は可読性・テスト容易性も乏しいものとなってしまう
