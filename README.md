@@ -5,7 +5,7 @@
 - jQuery
 - Backbone.js
 - Knockout.js
-- Angular.js
+- AngularJS
 - React.js
 
 
@@ -64,12 +64,12 @@ Viewでのデータの変更は自動的にView-Modelに反映される（逆も
 - ViewModel は巨大化・複雑化しやすく、リファクタリングやパフォーマンス最適化が困難となりうる
   - 巨大なViewModel は可読性・テスト容易性も乏しいものとなってしまう
 
-## Angular.js
+## AngularJS
 MVVMを採用。
 Backbone.jsやKnockout.jsに比べて豊富なビルトイン機能を持っている。
 Backbone.jsは自由度が高かったが、自由度の高さが返って欠点となることもあった（コードの書き方が強制されづらいため）。
 
-Angular.jsの特長としては依存性の注入（DI）やモジュラーアーキテクチャ（モジュールへの分割が可能）が挙げられる。
+AngularJSの特長としては依存性の注入（DI）やモジュラーアーキテクチャ（モジュールへの分割が可能）が挙げられる。
 
 ただし、以下のような欠点も抱えている。
 - パフォーマンスの問題
@@ -80,3 +80,5 @@ Angular.jsの特長としては依存性の注入（DI）やモジュラーア�
 - 型安全性
   - テンプレート内ではTypeScriptのような型安全性が働かない
 - `$scope`モデルの複雑さ
+
+後継のAngular とAngularJSは別のフレームワークなので注意。
