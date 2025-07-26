@@ -51,7 +51,7 @@ Controller: Model とView の橋渡し。命令的。
   - Model, View, Controller はしばしば密結合になってしまい、変更が難しくなる。
 
 ## Knockout.js
-MVVC アーキテクチャを採用している（Angular.js やVue.jsもMVVM を採用している）。
+MVVM アーキテクチャを採用している（Angular.js やVue.jsもMVVM を採用している）。
 
 View-Model: ModelとViewの橋渡し。Controllerとは異なり、Modelにのみ依存する（Viewについては関知しない）。
 
